@@ -394,9 +394,14 @@ video {
    ============================================ */
 
 .feature-showcase {
-    background: var(--bg);
+    background-color: var(--bg);
+    background-image: 
+        linear-gradient(var(--accent-05) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-05) 1px, transparent 1px);
+    background-size: 50px 50px;
     position: relative;
     overflow: hidden;
+    animation: backgroundDrift 60s linear infinite;
 }
 
 .feature-showcase::before {
@@ -1530,11 +1535,15 @@ video {
     height: 16px;
 }
 
-@keyframes fadeUp {
+@keyframes backgroundDrift {
+    0% { background-position: 0 0; }
+    100% { background-position: 500px 500px; }
+}
 
+@keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 
     to {

@@ -161,12 +161,12 @@
 }
 
 .visual-caption h3 {
-    color: #000000 !important;
+    color: #ffffff !important;
     font-weight: 800 !important;
 }
 
 .visual-caption p {
-    color: #000000 !important;
+    color: var(--accent) !important;
     font-weight: 600 !important;
 }
 
@@ -225,7 +225,7 @@
 
 /* Feature showcase background */
 .feature-showcase {
-    background: var(--bg);
+    background-color: var(--bg);
 }
 
 .feature-item {
