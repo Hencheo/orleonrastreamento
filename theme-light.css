@@ -95,14 +95,14 @@
 }
 
 .service-card.card-image-bg .card-content h3 {
-    color: #000000 !important;
+    color: var(--accent) !important;
     text-shadow: none !important;
     font-weight: 800 !important;
 }
 
 .service-card.card-image-bg .card-content p {
-    color: #000000 !important;
-    font-weight: 700 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
 }
 
 /* Testimonial cards */
