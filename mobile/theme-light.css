@@ -1,0 +1,241 @@
+/* ============================================
+   ORLEON RASTREAMENTO — Tema Claro (Branco + Laranja)
+   Carregar DEPOIS de style.css
+   ============================================ */
+
+:root {
+    /* === Core Palette === */
+    --bg: #FFFFFF;
+    --bg-card: #F5F5F5;
+    --bg-card-hover: #EBEBEB;
+    --accent: #FF6B00;
+    --accent-dim: rgba(255, 107, 0, 0.12);
+    --accent-glow: rgba(255, 107, 0, 0.3);
+    --accent-solid: rgba(255, 107, 0, 1);
+    --accent-03: rgba(255, 107, 0, 0.03);
+    --accent-05: rgba(255, 107, 0, 0.05);
+    --accent-08: rgba(255, 107, 0, 0.08);
+    --accent-10: rgba(255, 107, 0, 0.1);
+    --accent-12: rgba(255, 107, 0, 0.12);
+    --accent-15: rgba(255, 107, 0, 0.15);
+    --accent-20: rgba(255, 107, 0, 0.2);
+    --accent-40: rgba(255, 107, 0, 0.4);
+    --accent-50: rgba(255, 107, 0, 0.5);
+    --accent-80: rgba(255, 107, 0, 0.8);
+
+    /* === Typography === */
+    --text-main: #1A1A1A;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+
+    /* === Borders === */
+    --border: rgba(0, 0, 0, 0.08);
+    --border-accent: rgba(255, 107, 0, 0.25);
+
+    /* === Surfaces === */
+    --bg-dark: #FFFFFF;
+    --bg-hero: #F0F0F0;
+    --bg-surface-dark: rgba(255, 255, 255, 0.9);
+    --card-gradient-start: #FFFFFF;
+    --card-gradient-end: #F5F5F5;
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+    --navbar-bg-scroll: rgba(255, 255, 255, 0.95);
+    --floating-bg: rgba(255, 255, 255, 0.92);
+}
+
+/* ============================================
+   OVERRIDES — Elementos com valores que não
+   são puramente variáveis
+   ============================================ */
+
+/* Navbar — borda inferior suave */
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Hero overlay — gradiente para branco */
+.hero-overlay {
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.4) 40%,
+            rgba(255, 255, 255, 0.9) 70%,
+            rgba(255, 255, 255, 1) 100%);
+}
+
+/* Hero map background — grid sutil em fundo claro */
+.hero-map-bg {
+    background: var(--bg-hero);
+}
+
+/* Brand text no navbar */
+.logo-text .brand {
+    color: var(--text-main);
+}
+
+/* Nav button */
+.nav-btn {
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-main);
+}
+
+.nav-btn:active {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* Service cards — gradiente claro */
+.service-card {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Card com imagem de fundo — overlay pra branco */
+.service-card.card-image-bg .card-content {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 60%, transparent 100%);
+}
+
+.service-card.card-image-bg h3 {
+    color: var(--text-main);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.service-card.card-image-bg p {
+    color: var(--text-secondary);
+}
+
+/* Testimonial cards */
+.testimonial-card {
+    background: var(--bg);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.testimonial-quote {
+    color: #333333 !important;
+}
+
+/* Proof WhatsApp */
+.proof-whatsapp {
+    box-shadow:
+        0 12px 48px rgba(0, 0, 0, 0.1),
+        0 0 60px var(--accent-05);
+}
+
+/* About card */
+.about-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.stat-item {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* CTA section */
+.cta-section {
+    background: linear-gradient(180deg,
+            var(--bg-card) 0%,
+            var(--bg) 100%);
+}
+
+/* CTA primary button — texto branco sobre laranja */
+.cta-primary {
+    color: #FFFFFF;
+}
+
+/* CTA card visual */
+.cta-card {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02), 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Visual proof images filter */
+.visual-item img {
+    filter: brightness(1) contrast(1);
+}
+
+/* Visual proof overlay */
+.visual-item::after {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+}
+
+/* Platform section */
+.platform-section {
+    background: var(--bg-card);
+}
+
+.platform-img-wrap {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Video player */
+.video-player {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+}
+
+.video-badge {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Animated icon backgrounds */
+.animated-radar,
+.animated-lock,
+.animated-alert {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: inset 0 0 20px var(--accent-10), 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Pin — em fundo claro */
+.pin-small {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Floating CTA */
+.floating-cta {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.floating-cta .btn-float {
+    color: #FFFFFF;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* WhatsApp button — manter verde */
+.btn-whatsapp {
+    color: #FFFFFF;
+}
+
+/* Feature showcase background */
+.feature-showcase {
+    background: var(--bg);
+}
+
+.feature-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Showcase section */
+.showcase-section {
+    background: var(--bg-card);
+}
+
+/* Lock pulse stroke */
+.lock-pulse {
+    stroke: var(--accent-solid) !important;
+}
+
+/* CTA secondary */
+.cta-secondary {
+    color: var(--accent);
+}
+
+/* Scroll hint */
+.scroll-hint {
+    color: var(--text-muted);
+}
