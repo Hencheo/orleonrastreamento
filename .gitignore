@@ -1,13 +1,18 @@
-# dependências e pastas de scraper/testes
+# Dependências
 node_modules/
-puppeteer_run/
 
-# arquivos temporários e logs
+# Pastas de scraper/testes
+puppeteer_run/
+site_orleon/
+
+# Ferramentas internas
+.agents/
+check_seo.js
+
+# Arquivos de documentação/rascunho desnecessários
+*.md
+
+# Temporários
 .DS_Store
 *.log
 *.tmp
-.agents/
-
-# se quiser ignorar os scripts e rascunhos markdown:
-# *.md
-# check_seo.js

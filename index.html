@@ -7,13 +7,15 @@
     <title>Orleon Rastreamento — Proteção Veicular em Tempo Real</title>
     <meta name="description"
         content="Rastreamento veicular invisível com bloqueio remoto. Proteja carros, motos, caminhões e frotas. Monitoramento 24h com plataforma própria.">
-    <link rel="icon" type="image/png" href="media/sobre.png">
-    <link rel="apple-touch-icon" href="media/sobre.png">
+    <link rel="icon" type="image/png" href="../site_orleon/media/sobre.png">
+    <link rel="apple-touch-icon" href="../site_orleon/media/sobre.png">
     <meta property="og:title" content="Orleon Rastreamento — Proteção Veicular em Tempo Real">
-    <meta property="og:description" content="Rastreamento veicular invisível com bloqueio remoto. Monitoramento 24h com plataforma própria.">
-    <meta property="og:image" content="media/sobre.png">
+    <meta property="og:description"
+        content="Rastreamento veicular invisível com bloqueio remoto. Monitoramento 24h com plataforma própria.">
+    <meta property="og:image" content="../site_orleon/media/sobre.png">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
+    <link id="theme-light-css" rel="stylesheet" href="theme-light.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +31,24 @@
             <span class="brand">ORLEON</span>
             <span class="sub">RASTREAMENTO</span>
         </div>
-        <a href="https://orleongps.com.br/login" class="nav-btn" id="btn-login">Área Cliente</a>
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <button class="nav-btn" id="btn-theme-toggle" aria-label="Alternar Tema"
+                style="padding: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width: 16px; height: 16px;">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            <a href="https://orleongps.com.br/login" class="nav-btn" id="btn-login">Área Cliente</a>
+        </div>
     </header>
 
     <!-- ============================
@@ -42,12 +61,13 @@
                 <svg viewBox="0 0 400 800" class="route-path">
                     <!-- Rota principal (rastreado) -->
                     <path d="M200 750 C200 650, 100 600, 120 500 S250 400, 200 300 S100 200, 180 150 S250 80, 200 50"
-                        stroke="rgba(168,255,0,0.3)" stroke-width="2" fill="none" stroke-dasharray="8 6" />
-                    <circle r="8" fill="#A8FF00">
+                        stroke="currentColor" stroke-opacity="0.3" stroke-width="2" fill="none"
+                        stroke-dasharray="8 6" />
+                    <circle r="8" fill="currentColor">
                         <animateMotion dur="6s" repeatCount="indefinite"
                             path="M200 750 C200 650, 100 600, 120 500 S250 400, 200 300 S100 200, 180 150 S250 80, 200 50" />
                     </circle>
-                    <circle r="8" fill="#A8FF00" opacity="0.4">
+                    <circle r="8" fill="currentColor" opacity="0.4">
                         <animateMotion dur="6s" repeatCount="indefinite"
                             path="M200 750 C200 650, 100 600, 120 500 S250 400, 200 300 S100 200, 180 150 S250 80, 200 50" />
                         <animate attributeName="r" values="8;24;8" dur="2s" repeatCount="indefinite" />
@@ -61,12 +81,13 @@
                         <!-- Pin shape -->
                         <path
                             d="M0 -28 C-8 -28, -14 -22, -14 -14 C-14 -6, 0 4, 0 4 C0 4, 14 -6, 14 -14 C14 -22, 8 -28, 0 -28 Z"
-                            fill="#A8FF00" opacity="0.9" />
-                        <circle cx="0" cy="-16" r="4" fill="#050505" />
+                            fill="currentColor" opacity="0.9" />
+                        <circle cx="0" cy="-16" r="4" fill="var(--bg-dark, #050505)" />
                         <!-- Tooltip -->
-                        <rect x="10" y="-30" width="90" height="22" rx="6" fill="rgba(5,5,5,0.85)"
-                            stroke="rgba(168,255,0,0.3)" stroke-width="1" />
-                        <text x="55" y="-15" text-anchor="middle" fill="#A8FF00" font-size="9" font-weight="700"
+                        <rect x="10" y="-30" width="90" height="22" rx="6"
+                            fill="var(--bg-surface-dark, rgba(5,5,5,0.85))" stroke="currentColor" stroke-opacity="0.3"
+                            stroke-width="1" />
+                        <text x="55" y="-15" text-anchor="middle" fill="currentColor" font-size="9" font-weight="700"
                             font-family="Inter, sans-serif" letter-spacing="0.5">MEU VEÍCULO</text>
                     </g>
 
@@ -128,7 +149,46 @@
                 Monitoramento Ativo 24h
             </div>
 
-            <h1>Proteção<br><span class="accent">Invisível.</span></h1>
+            <h1><span id="g-word1">Proteção</span><br><span id="g-word2" class="accent">Invisível.</span></h1>
+            <script>
+                (function () {
+                    const w1 = document.getElementById('g-word1');
+                    const w2 = document.getElementById('g-word2');
+                    const chars = "AX01ZW&%#@$>[k]8*!?XQ";
+                    const s1 = { t1: "Proteção", c1: "", t2: "Invisível.", c2: "accent" };
+                    const s2 = { t1: "Proteção", c1: "accent", t2: "Orleon.", c2: "" };
+                    let toS2 = false;
+
+                    function runGlitch(el, finalStr, finalClass) {
+                        el.className = finalClass;
+                        let ticks = 0;
+                        let speed = 40;
+                        let id = setInterval(() => {
+                            let curr = "";
+                            for (let i = 0; i < finalStr.length; i++) {
+                                if (ticks > 6 + i * 1.2) {
+                                    curr += finalStr[i];
+                                } else {
+                                    curr += chars[Math.floor(Math.random() * chars.length)];
+                                }
+                            }
+                            el.innerText = curr;
+                            ticks++;
+                            if (ticks > 6 + finalStr.length * 1.2) {
+                                clearInterval(id);
+                                el.innerText = finalStr;
+                            }
+                        }, speed);
+                    }
+
+                    setInterval(() => {
+                        toS2 = !toS2;
+                        let state = toS2 ? s2 : s1;
+                        runGlitch(w1, state.t1, state.c1);
+                        setTimeout(() => runGlitch(w2, state.t2, state.c2), 250);
+                    }, 4000);
+                })();
+            </script>
 
             <p class="hero-description">
                 Instalação oculta. Bloqueio remoto em segundos.
@@ -145,8 +205,8 @@
             </a>
 
             <div class="proof-bar">
-                <span class="proof-number">+500</span>
-                <span class="proof-text">veículos recuperados com sucesso através da nossa plataforma.</span>
+                <span class="proof-number">+700</span>
+                <span class="proof-text">veículos monitorados em tempo real através da nossa plataforma.</span>
             </div>
         </div>
     </section>
@@ -155,83 +215,179 @@
          FEATURES — Apple-style Stacked
          ============================ -->
     <section class="section feature-showcase" id="features">
-        <div class="section-header reveal">
+        <div class="section-header reveal-blur">
             <div class="section-label">Recursos</div>
             <h2 class="section-title">Tecnologia que<br><span class="accent">funciona na hora.</span></h2>
             <p class="section-sub">Cada segundo conta. Nosso sistema opera em tempo real, sem atraso, sem falha.</p>
         </div>
 
-        <div class="feature-item reveal">
-            <div class="feature-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-            </div>
-            <div class="feature-big-text">Localização<br><span class="accent">ao vivo.</span></div>
-            <p class="feature-desc">Acompanhe rota, velocidade e posição exata do veículo em tempo real. De qualquer
-                lugar, pelo celular.</p>
-        </div>
+        <div class="showcase-timeline"></div>
+        <div class="feature-list">
+            <div class="feature-item reveal">
+                <div class="feature-icon-wrap animated-radar">
+                    <svg viewBox="0 0 100 100" class="radar-svg">
+                        <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-opacity="0.15" stroke-width="1"
+                            fill="none" />
+                        <circle cx="50" cy="50" r="28" stroke="currentColor" stroke-opacity="0.1" stroke-width="1"
+                            fill="none" stroke-dasharray="2 4" />
+                        <circle cx="50" cy="50" r="10" stroke="currentColor" stroke-opacity="0.1" stroke-width="1"
+                            fill="none" />
 
-        <div class="feature-item reveal">
-            <div class="feature-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-            </div>
-            <div class="feature-big-text">Bloqueio<br><span class="accent">imediato.</span></div>
-            <p class="feature-desc">Ao menor sinal de roubo, trave o motor do veículo via internet. Em segundos. Sem
-                depender de ninguém.</p>
-        </div>
+                        <g class="radar-sweep">
+                            <path d="M 50 50 L 50 5 A 45 45 0 0 1 95 50 Z" fill="url(#radarGradient)" />
+                            <line x1="50" y1="50" x2="50" y2="5" stroke="currentColor" stroke-width="1.5" />
+                        </g>
 
-        <div class="feature-item reveal">
-            <div class="feature-icon-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
+                        <defs>
+                            <linearGradient id="radarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="currentColor" stop-opacity="0.4" />
+                                <stop offset="100%" stop-color="currentColor" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+
+                        <circle cx="28" cy="35" r="3" fill="currentColor" class="ping ping-1" />
+                        <circle cx="70" cy="25" r="2" fill="currentColor" class="ping ping-2" />
+                        <circle cx="60" cy="65" r="4" fill="#FFF" class="ping ping-3" />
+                        <circle cx="50" cy="50" r="3" fill="currentColor" />
+                    </svg>
+                </div>
+                <div class="feature-big-text">Localização<br><span class="accent">ao vivo</span></div>
+                <p class="feature-desc">Acompanhe rota, velocidade e posição exata do veículo em tempo real. De qualquer
+                    lugar, pelo celular.</p>
             </div>
-            <div class="feature-big-text">Alertas<br><span class="accent">instantâneos.</span></div>
-            <p class="feature-desc">Receba Push no celular se ligarem o motor, ultrapassarem a velocidade ou saírem da
-                área segura.</p>
+
+            <div class="feature-item reveal">
+                <div class="feature-icon-wrap animated-lock">
+                    <svg viewBox="0 0 100 100" class="lock-svg">
+                        <circle cx="50" cy="50" r="15" fill="none" class="lock-pulse" />
+                        <!-- Shield background -->
+                        <path d="M 50 15 L 80 30 L 80 55 C 80 80 50 95 50 95 C 50 95 20 80 20 55 L 20 30 Z"
+                            fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-opacity="0.2"
+                            stroke-width="2" />
+                        <g class="lock-mechanism">
+                            <!-- Lock Arc -->
+                            <path class="shackle" d="M 40 45 L 40 33 C 40 23 60 23 60 33 L 60 45" fill="none"
+                                stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                            <!-- Lock Body -->
+                            <rect x="35" y="45" width="30" height="25" rx="4" fill="currentColor" />
+                            <circle cx="50" cy="55" r="3" fill="#000" />
+                            <path d="M 50 58 L 50 63" stroke="#000" stroke-width="2" stroke-linecap="round" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="feature-big-text">Bloqueio<br><span class="accent">imediato</span></div>
+                <p class="feature-desc">Ao menor sinal de roubo, trave o motor do veículo via internet. Em segundos. Sem
+                    depender de ninguém.</p>
+            </div>
+
+            <div class="feature-item reveal">
+                <div class="feature-icon-wrap animated-alert">
+                    <svg viewBox="0 0 100 100" class="alert-svg">
+                        <!-- Notification Waves -->
+                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path class="wave wave-1" d="M 72 40 Q 80 50 72 60" />
+                            <path class="wave wave-2" d="M 80 35 Q 90 50 80 65" />
+                            <path class="wave wave-1" d="M 28 40 Q 20 50 28 60" />
+                            <path class="wave wave-2" d="M 20 35 Q 10 50 20 65" />
+                        </g>
+                        <!-- Phone body -->
+                        <rect x="35" y="20" width="30" height="60" rx="4" fill="var(--bg-dark, #050505)"
+                            stroke="currentColor" stroke-opacity="0.5" stroke-width="2" />
+                        <line x1="45" y1="26" x2="55" y2="26" stroke="currentColor" stroke-opacity="0.2"
+                            stroke-width="2" stroke-linecap="round" />
+                        <!-- Push Notification Banner inside phone -->
+                        <rect class="push-banner bg" x="39" y="32" width="22" height="10" rx="2" fill="currentColor"
+                            fill-opacity="0.8" />
+                        <line class="push-banner line" x1="42" y1="37" x2="52" y2="37" stroke="#000" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="feature-big-text">Alertas<br><span class="accent">instantâneos</span></div>
+                <p class="feature-desc">Receba Push no celular se ligarem o motor, ultrapassarem a velocidade ou saírem
+                    da
+                    área segura.</p>
+            </div>
         </div>
     </section>
 
     <!-- ============================
-         VIDEO SHOWCASE — Propaganda
+         SHOWCASE SECTION — Horizontal Media Scroll
          ============================ -->
-    <section class="section video-showcase" id="video">
-        <div class="section-header reveal" style="text-align: center;">
-            <div class="section-label" style="justify-content: center;">Veja na prática</div>
-            <h2 class="section-title">Controle total.<br><span class="accent">Na palma da mão.</span></h2>
-            <p class="section-sub" style="text-align: center;">Monitoramento em tempo real. Bloqueio instantâneo.
-                Alertas no seu celular. Tudo funcionando — agora.</p>
+    <section class="section showcase-section" id="showcase">
+        <div class="section-header reveal-blur" style="text-align: center;">
+            <div class="section-label" style="justify-content: center;">Na Prática</div>
+            <h2 class="section-title">Resultados<br><span class="accent">Comprovados.</span></h2>
+            <p class="section-sub" style="text-align: center;">Deslize a tela para ver demonstrações em vídeo e casos de
+                recuperação reais de clientes Orleon.</p>
         </div>
 
-        <div class="video-player reveal-scale">
-            <video loop playsinline controls>
-                <source src="media/video.mp4" type="video/mp4">
-            </video>
-            <div class="video-badge">
-                <span class="badge-dot"></span>
-                AO VIVO
+        <div class="showcase-scroll reveal">
+            <!-- App Video -->
+            <div class="showcase-card">
+                <div class="video-player">
+                    <video loop playsinline controls>
+                        <source src="../site_orleon/media/video.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-badge">
+                        <span class="badge-dot"></span>
+                        AO VIVO
+                    </div>
+                </div>
+                <div class="showcase-caption">
+                    <p><strong>App Orleon.</strong> Controle total e rastreamento imediato direto do smartphone.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="video-cta reveal">
-            <p class="video-tagline">Veja como funciona. <strong>Sem promessa, sem enrolação.</strong></p>
-            <a href="https://wa.me/5511961169667" class="cta-secondary" id="cta-video">
-                Quero Proteger Meu Veículo
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                </svg>
-            </a>
+            <!-- WhatsApp Recovery -->
+            <div class="showcase-card">
+                <div class="proof-whatsapp">
+                    <img src="../site_orleon/media/foto1.jpeg" alt="Recuperação XRE 190 via WhatsApp" loading="lazy">
+                </div>
+                <div class="showcase-caption">
+                    <p><strong>"Me salvou. Muito obrigada."</strong><br>Moto XRE 190 recuperada na hora com nossa equipe
+                        e viatura.</p>
+                </div>
+            </div>
+
+            <!-- User Video 1 -->
+            <div class="showcase-card">
+                <div class="video-player">
+                    <video loop playsinline controls preload="metadata">
+                        <source src="../site_orleon/media/WhatsApp Video 2026-04-04 at 23.09.21.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- User Video 2 -->
+            <div class="showcase-card">
+                <div class="video-player">
+                    <video loop playsinline controls preload="metadata">
+                        <source src="../site_orleon/media/Gravação de tela de 2026-04-05 11-06-43.webm"
+                            type="video/webm">
+                    </video>
+                </div>
+            </div>
+
+            <!-- User Video 3 -->
+            <div class="showcase-card">
+                <div class="video-player">
+                    <video loop playsinline controls preload="metadata">
+                        <source src="../site_orleon/media/Gravação de tela de 2026-04-05 11-07-28.webm"
+                            type="video/webm">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Final CTA Card in Scroll -->
+            <div class="showcase-card cta-card">
+                <div class="cta-inner">
+                    <h3>Sua vez</h3>
+                    <p>Não espere o pior acontecer. Fale com nossos consultores e agende a instalação.</p>
+                    <a href="https://wa.me/5511961169667" class="cta-secondary" style="width: 100%;">
+                        Proteger Veículo
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -239,7 +395,7 @@
          PLATFORM — Real Screenshots
          ============================ -->
     <section class="platform-section" id="platform">
-        <div class="section-header reveal">
+        <div class="section-header reveal-blur">
             <div class="section-label">Plataforma</div>
             <h2 class="section-title">Sua tela.<br><span class="accent">Seu controle.</span></h2>
             <p class="section-sub">Plataforma própria com rastreamento via satélite, histórico completo e painel de
@@ -248,11 +404,11 @@
 
         <div class="platform-images">
             <div class="platform-img-wrap reveal-scale">
-                <img src="media/foto2.jpeg"
+                <img src="../site_orleon/media/foto2.jpeg"
                     alt="Plataforma de rastreamento Orleon — visão satélite com dados do veículo" loading="lazy">
             </div>
             <div class="platform-img-wrap reveal-scale reveal-delay-1">
-                <img src="media/foto3.jpeg"
+                <img src="../site_orleon/media/foto3.jpeg"
                     alt="Rastreamento de veículo em tempo real com endereço e condutor" loading="lazy">
             </div>
         </div>
@@ -271,106 +427,96 @@
          SERVICES — Vehicle Types
          ============================ -->
     <section class="section services-section" id="services">
-        <div class="section-header reveal">
+        <div class="section-header reveal-blur">
             <div class="section-label">Proteção para</div>
             <h2 class="section-title">Qualquer<br><span class="accent">veículo.</span></h2>
         </div>
 
         <div class="services-grid">
-            <div class="service-card reveal reveal-delay-1">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path
-                            d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10l-2.7-3.6A2 2 0 0 0 13.7 5H6.3a2 2 0 0 0-1.6.9L2 9.5 .5 11.1c-.8.2-1.5 1-1.5 1.9v3c0 .6.4 1 1 1h2" />
-                        <circle cx="7" cy="17" r="2" />
-                        <circle cx="17" cy="17" r="2" />
-                    </svg>
+            <div class="service-card card-image-bg reveal reveal-delay-1">
+                <img class="bg-img" src="../site_orleon/media/cat_carro.png" alt="Rastreamento para Carros">
+                <div class="card-content">
+                    <h3>Carros</h3>
+                    <p>Passeio e utilitários</p>
                 </div>
-                <h3>Carros</h3>
-                <p>Passeio e utilitários</p>
             </div>
 
-            <div class="service-card reveal reveal-delay-2">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M12 19v-7m0 0V5m0 7h7m-7 0H5" />
-                        <circle cx="12" cy="12" r="10" />
-                    </svg>
+            <div class="service-card card-image-bg reveal reveal-delay-2">
+                <img class="bg-img" src="../site_orleon/media/cat_moto.png" alt="Rastreamento para Motos">
+                <div class="card-content">
+                    <h3>Motos</h3>
+                    <p>Instalação discreta</p>
                 </div>
-                <h3>Motos</h3>
-                <p>Instalação discreta</p>
             </div>
 
-            <div class="service-card reveal reveal-delay-3">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="1" y="8" width="22" height="10" rx="2" />
-                        <path d="M5 18v2m14-2v2" />
-                        <circle cx="7" cy="13" r="1.5" />
-                        <circle cx="17" cy="13" r="1.5" />
-                    </svg>
+            <div class="service-card card-image-bg reveal reveal-delay-3">
+                <img class="bg-img" src="../site_orleon/media/cat_caminhao.png" alt="Rastreamento para Caminhões">
+                <div class="card-content">
+                    <h3>Caminhões</h3>
+                    <p>Carga e logística</p>
                 </div>
-                <h3>Caminhões</h3>
-                <p>Carga e logística</p>
             </div>
 
-            <div class="service-card reveal reveal-delay-4">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M2 20l2-2m16 2l-2-2" />
-                        <path d="M4 18h16" />
-                        <path d="M4 18c0-4 3-12 8-12s8 8 8 12" />
-                    </svg>
+            <div class="service-card card-image-bg reveal reveal-delay-4">
+                <img class="bg-img" src="../site_orleon/media/cat_nautico.png" alt="Rastreamento Náutico">
+                <div class="card-content">
+                    <h3>Náuticos</h3>
+                    <p>Embarcações e jet skis</p>
                 </div>
-                <h3>Náuticos</h3>
-                <p>Embarcações e jet skis</p>
             </div>
 
-            <div class="service-card featured reveal">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
+            <div class="service-card card-image-bg featured reveal">
+                <img class="bg-img" src="../site_orleon/media/logistica_frota.png" alt="Gestão de Frotas">
+                <div class="card-content">
+                    <h3>Gestão de Frotas</h3>
+                    <p>Controle logístico de múltiplos veículos em um único painel.</p>
                 </div>
-                <h3>Gestão de Frotas</h3>
-                <p>Controle total de múltiplos veículos. Rotas, motoristas e custos em um painel.</p>
             </div>
         </div>
     </section>
 
     <!-- ============================
-         PROOF SECTION — WhatsApp Case
+         VISUAL PROOF — Infrastructure
          ============================ -->
-    <section class="section proof-section" id="proof">
-        <div class="section-header reveal">
-            <div class="section-label">Caso Real</div>
-            <h2 class="section-title">Recuperação<br><span class="accent">em minutos.</span></h2>
-            <p class="section-sub">Este print é de um cliente real. Moto recuperada com apoio da viatura, direto pela
-                plataforma Orleon.</p>
+    <section class="section visual-proof" id="infra">
+        <div class="section-header reveal reveal-blur">
+            <div class="section-label">Estrutura Real</div>
+            <h2 class="section-title">Infraestrutura<br><span class="accent">avançada.</span></h2>
+            <p class="section-sub">Hardware de ponta e centros operacionais focados em segurança B2B e B2C.</p>
         </div>
 
-        <div class="proof-whatsapp reveal-scale">
-            <img src="media/foto1.jpeg"
-                alt="Print de WhatsApp — cliente recuperando moto roubada com auxílio da polícia via rastreador Orleon"
-                loading="lazy">
-        </div>
+        <div class="visual-grid">
+            <div class="visual-item reveal-scale">
+                <img src="../site_orleon/media/hardware_rastreador.png" alt="Hardware de rastreamento avançado">
+                <div class="visual-caption">
+                    <h3>Tecnologia Embarcada</h3>
+                    <p>Equipamentos modernos, ocultos e testados rigorosamente.</p>
+                </div>
+            </div>
 
-        <p class="proof-caption reveal">
-            <strong>"Peguei. Muito obrigada. Me salvou."</strong><br>
-            — Vitória, cliente Orleon. Moto XRE 190 recuperada no mesmo dia.
-        </p>
+            <div class="visual-item reveal-scale reveal-delay-1">
+                <img src="../site_orleon/media/centro_monitoramento.png" alt="Centro de Controle Operacional">
+                <div class="visual-caption">
+                    <h3>Centro de Monitoramento</h3>
+                    <p>Controle de telemetria e segurança em tempo real.</p>
+                </div>
+            </div>
+
+            <div class="visual-item reveal-scale reveal-delay-2">
+                <img src="../site_orleon/media/logistica_frota.png" alt="Gestão de Logística e Frotas">
+                <div class="visual-caption">
+                    <h3>Gestão de Frotas</h3>
+                    <p>Controle logístico completo para empresas de todos os tamanhos.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ============================
          TESTIMONIALS — Horizontal Scroll
          ============================ -->
     <section class="testimonials-section" id="testimonials">
-        <div class="section-header reveal">
+        <div class="section-header reveal reveal-blur">
             <div class="section-label">Depoimentos</div>
             <h2 class="section-title">Quem usa,<br><span class="accent">recomenda.</span></h2>
         </div>
@@ -515,7 +661,7 @@
          ABOUT — Company
          ============================ -->
     <section class="section about-section" id="about">
-        <div class="section-header reveal">
+        <div class="section-header reveal reveal-blur">
             <div class="section-label">Sobre</div>
             <h2 class="section-title">Plataforma própria.<br><span class="accent">Equipe dedicada.</span></h2>
         </div>
@@ -532,8 +678,8 @@
 
             <div class="about-stats">
                 <div class="stat-item">
-                    <div class="stat-number">+500</div>
-                    <div class="stat-label">Veículos recuperados</div>
+                    <div class="stat-number">+700</div>
+                    <div class="stat-label">Veículos monitorados</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">24h</div>
@@ -555,7 +701,7 @@
          CTA FINAL + FOOTER
          ============================ -->
     <section class="section cta-section" id="contact">
-        <div class="section-header reveal">
+        <div class="section-header reveal reveal-blur">
             <h2 class="section-title">Proteja seu veículo<br><span class="accent">hoje.</span></h2>
             <p class="section-sub">Nossa equipe orienta sobre a instalação no seu modelo. Atendimento direto, sem robô.
             </p>
@@ -598,7 +744,7 @@
          ============================ -->
     <script>
         // Scroll Reveal
-        const revealElements = document.querySelectorAll('.reveal, .reveal-scale');
+        const revealElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-blur');
 
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -648,12 +794,41 @@
         window.addEventListener('scroll', () => {
             const currentScroll = window.scrollY;
             if (currentScroll > 50) {
-                navbar.style.background = 'rgba(5, 5, 5, 0.95)';
+                navbar.style.background = getComputedStyle(document.documentElement).getPropertyValue('--navbar-bg-scroll').trim();
             } else {
-                navbar.style.background = 'rgba(5, 5, 5, 0.75)';
+                navbar.style.background = getComputedStyle(document.documentElement).getPropertyValue('--navbar-bg').trim();
             }
             lastScroll = currentScroll;
         }, { passive: true });
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('btn-theme-toggle');
+        const themeLightCss = document.getElementById('theme-light-css');
+        let isLightMode = true; // Since the link is active by default
+
+        themeToggleBtn.addEventListener('click', () => {
+            isLightMode = !isLightMode;
+            themeLightCss.disabled = !isLightMode;
+
+            // Icon transition (Sun / Moon)
+            const iconSvg = themeToggleBtn.querySelector('svg');
+            if (isLightMode) {
+                iconSvg.innerHTML = `
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                `;
+            } else {
+                iconSvg.innerHTML = `
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                `;
+            }
+        });
     </script>
 </body>
 
