@@ -89,18 +89,20 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* Card com imagem de fundo — overlay pra branco */
+/* Card com imagem de fundo — REMOVER camada que atrapalha leitura */
 .service-card.card-image-bg .card-content {
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 60%, transparent 100%);
+    background: none;
 }
 
 .service-card.card-image-bg h3 {
     color: var(--text-main);
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+    text-shadow: none;
+    font-weight: 800;
 }
 
 .service-card.card-image-bg p {
-    color: var(--text-secondary);
+    color: var(--text-main);
+    font-weight: 500;
 }
 
 /* Testimonial cards */
@@ -153,9 +155,18 @@
     filter: brightness(1) contrast(1);
 }
 
-/* Visual proof overlay */
+/* Visual proof overlay — REMOVER camada esbranquiçada */
 .visual-item::after {
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    display: none;
+}
+
+.visual-caption h3 {
+    color: var(--text-main);
+}
+
+.visual-caption p {
+    color: var(--text-main);
+    font-weight: 500;
 }
 
 /* Platform section */

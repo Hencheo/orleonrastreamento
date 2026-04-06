@@ -871,7 +871,7 @@ video {
 }
 
 .service-card p {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-muted);
     line-height: 1.4;
 }
